@@ -1,4 +1,5 @@
 import pymysql
+from pymysql import Error
 
 # 建库
 # db = pymysql.connect(host='localhost', user='root',
@@ -11,9 +12,14 @@ import pymysql
 # db.close()
 
 # 建表
-# db = pymysql.connect(host='localhost', user='root', password='123456', port=3306, db='spiders')
+# db = pymysql.connect(host='localhost', user='root',
+#                      password='123456', port=3306, db='spiders')
 # cursor = db.cursor()
-# sql = 'CREATE TABLE IF NOT EXISTS students (id VARCHAR(255) NOT NULL, name VARCHAR(255) NOT NULL, age INT NOT NULL, PRIMARY KEY (id))'
+# sql = '''CREATE TABLE IF NOT EXISTS students
+#     (id VARCHAR(255) NOT NULL,
+#     name VARCHAR(255) NOT NULL,
+#     age INT NOT NULL,
+#     PRIMARY KEY (id))'''
 # cursor.execute(sql)
 # db.close()
 
@@ -29,6 +35,7 @@ sql = 'INSERT INTO students(id, name, age) values(% s, % s, % s)'
 try:
     cursor.execute(sql, (id, user, age))
     db.commit()
-except:
+except Error as e:
+    print(e)
     db.rollback()
 db.close()
