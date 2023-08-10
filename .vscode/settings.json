@@ -1,0 +1,12 @@
+{
+    
+    "code-runner.executorMap": {
+        "python": "$pythonPath -u $fullFileName"
+    },
+    // "code-runner.runInTerminal": true,
+    "python.pythonPath": "D:\\Softwares\\anaconda3\\python.exe",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none",
+}
