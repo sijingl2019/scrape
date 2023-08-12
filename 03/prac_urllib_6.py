@@ -3,7 +3,7 @@ from urllib.parse import urlencode
 from urllib.parse import parse_qs
 from urllib.parse import parse_qsl
 from urllib.parse import quote
-from urllib.parse import unquote 
+from urllib.parse import unquote
 
 result = urlparse('http://www.baidu.com/index.html;user?id=5#comment')
 print(type(result), result)
@@ -20,7 +20,8 @@ print(urlunsplit(data))
 print(urljoin('http://www.baidu.com', 'FAQ.html'))
 print(urljoin('http://www.baidu.com', 'https://cuiqingcai.com/FAQ.html'))
 print(urljoin('http://www.baidu.com/about.html', 'https://cuiqingcai.com/FAQ.html'))
-print(urljoin('http://www.baidu.com/about.html', 'https://cuiqingcai.com/FAQ.html?question=2'))
+print(urljoin('http://www.baidu.com/about.html',
+      'https://cuiqingcai.com/FAQ.html?question=2'))
 print(urljoin('http://www.baidu.com?wd=abc', 'https://cuiqingcai.com/index.php'))
 print(urljoin('http://www.baidu.com', '?category=2#comment'))
 print(urljoin('www.baidu.com', '?category=2#comment'))

@@ -1,14 +1,20 @@
-from urllib.request import HTTPPasswordMgrWithDefaultRealm, HTTPBasicAuthHandler, build_opener
+from urllib.request import HTTPPasswordMgrWithDefaultRealm, HTTPBasicAuthHandler, HTTPSHandler, build_opener
 from urllib.error import URLError
+import ssl
 
-username = 'sijingl2013@outlook.com'
-password = 'Lshine@123'
-url = 'https://github.com/features/actions'
+username = 'admin'
+password = 'admin'
+url = 'https://ssr3.scrape.center'
 
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
 p = HTTPPasswordMgrWithDefaultRealm()
 p.add_password(None, url, username, password)
 auth_handler = HTTPBasicAuthHandler(p)
-opener = build_opener(auth_handler)
+
+https = HTTPSHandler(context=ctx)
+opener = build_opener(https, auth_handler)
 
 try:
     result = opener.open(url)
