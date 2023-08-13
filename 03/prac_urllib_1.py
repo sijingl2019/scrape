@@ -3,12 +3,12 @@ import urllib.parse
 import socket
 import urllib.error
 
-# response = urllib.request.urlopen('http://www.baidu.com')
+response = urllib.request.urlopen('http://www.baidu.com')
 # basic code
-# print(response.read().decode('utf-8'))
-# print(response.status)
-# print(response.getheaders())
-# print(response.getheader('Server'))
+print(response.read().decode('utf-8'))
+print(response.status)
+print(response.getheaders())
+print(response.getheader('Server'))
 
 # data param
 # data = bytes(urllib.parse.urlencode({'word': 'hello'}), encoding='utf-8')
@@ -43,4 +43,3 @@ try:
 except urllib.error.URLError as e:
     if isinstance(e.reason, socket.timeout):
         print('TIME OUT')
-

@@ -1,4 +1,6 @@
-from urllib.request import HTTPPasswordMgrWithDefaultRealm, HTTPBasicAuthHandler, HTTPSHandler, build_opener
+from urllib.request import HTTPPasswordMgrWithDefaultRealm
+from urllib.request import HTTPBasicAuthHandler
+from urllib.request import HTTPSHandler, build_opener
 from urllib.error import URLError
 import ssl
 
