@@ -1,12 +1,12 @@
 import requests
 from requests.packages import urllib3
+urllib3.disable_warnings()
 # 保持会话
 # s = requests.Session()
 # s.get('http://httpbin.org/cookies/set/number/123456789')
 # r = s.get('http://httpbin.org/cookies')
 # print(r.text)
 
-urllib3.disable_warnings()
 # response = requests.get('https://ssr2.scrape.center/', verify=False)
 # print(response.status_code)
 
